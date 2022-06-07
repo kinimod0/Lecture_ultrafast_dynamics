@@ -13,6 +13,14 @@ All notebooks work with the following package-versions:
 |ipympl     |0.2.1      |
 
 # Hydrogen Atom
+Propagation of atomic wavefunctions using the [*Multiphoton-Matrix-Iterative-Method*](https://journals.aps.org/pra/pdf/10.1103/PhysRevA.60.3125) on non-uniform grids. We use atomic units. The hamiltonian operator reads
+
+$$ \hat{H}_0\Psi_{\ell}(r, t)Y_{\ell,m}(\theta,\varphi) = \left(-\frac{1}{2 r^2}\frac{\partial}{\partial r}\left(r^2 \frac{\partial}{\partial r} \Psi_{\ell}(r, t) \right) + \frac{\ell(\ell+1)}{2r^2}\Psi_{\ell}(r, t) - \frac{1}{r}\Psi_{\ell}(r, t)\right) Y_{\ell,m}(\theta,\varphi).$$
+
+<p align = "center">
+<img src='figures/Hydrogen_Pulse.png' width = 400>
+<img src='figures/Hydrogen_HHG.png' width = 400>
+</p>
 
 # High Harmonic Generation (HHG)
 Artificial one-dimensional atom of the form 
