@@ -82,12 +82,13 @@ def calculate_FDM_coefficients_radial(rs, return_dx = False):
     assert(isinstance(return_dx, bool))
     size = len(rs)
     order = 1
-    total_dxs = np.concatenate(([2 * rs[0]], np.diff(rs), [rs[-1]]))
+    drs = np.diff(rs)
+    total_drs = np.concatenate(([2 * rs[0]], drs, [drs[-1]]))
     
-    first_deriv_coefficients, second_deriv_coefficients = coeffs_from_difference_map(total_dxs, size, order)
+    first_deriv_coefficients, second_deriv_coefficients = coeffs_from_difference_map(total_drs, size, order)
     
     if return_dx:
-        return first_deriv_coefficients, second_deriv_coefficients, total_dxs
+        return first_deriv_coefficients, second_deriv_coefficients, total_drs
     return first_deriv_coefficients, second_deriv_coefficients
 
 def build_jacobi_det_grid(dxs, size, order = 2):
@@ -98,6 +99,16 @@ def build_jacobi_det_grid(dxs, size, order = 2):
     offsets = range(2 * order + 1)
     jac = ssp.diags(coefficients_equi(1, order = order), offsets = offsets, shape = (size, size + 2 * order), dtype = np.float64).dot(xs_shifted)
     return jac
+
+def vector_to_sparse_mat(vec):
+    return ssp.diags(vec)
+
+def build_derivative_matrices(coeffs_table, size, order, neumann = False):
+    offsets = range(-order, order + 1)
+    if neumann:
+        assert(order == 1)
+        coeffs_table[0, 1] += coeffs_table[0, 0]
+    return ssp.diags([coeffs_table[max(order - i, 0):, i] for i in range(2 * order + 1)], offsets = offsets, shape = (size, size), dtype = np.float64).tocsr()
 
 
 class Hamiltonian:
