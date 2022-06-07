@@ -25,10 +25,13 @@ where $f(t)$ is the envelope function of a $\sin^2$-laser pulse. We choose Diric
 
 # Two-Level System
 Generic two-level system subjected to an external classical field is described via the hamiltonian
-$$\hat{H}=\frac{\omega_0}{2} \hat{\sigma}_z + \frac{B_0}{2} \left\{ \hat{\sigma}_x \cos(\omega t) + \hat{\sigma}_y \sin(\omega t)\right\}.$$
+
+$$\hat{H}=\frac{\omega_0}{2} \hat{\sigma}_z + \frac{B_0}{2} ( \hat{\sigma}_x \cos(\omega t) + \hat{\sigma}_y \sin(\omega t)).$$
+
 <p align = "center">
 <img src='figures/two_level.png' width = 400>
 </p>
 
 Calculations of various expectation values like magnetization and susceptibility
-$$M^{(z)} \sim \partial E / \partial \omega_0, \\ \chi_{\mathrm{m}}^{(zz)} \sim \partial^2 E / \partial \omega_0^2.$$
+$$M^{(z)} \sim \partial E / \partial \omega_0,$$
+$$\chi_{\mathrm{m}}^{(zz)} \sim \partial^2 E / \partial \omega_0^2.$$
