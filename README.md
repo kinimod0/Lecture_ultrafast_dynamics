@@ -25,7 +25,7 @@ $$ \hat{H}_0\Psi_{\ell}(r, t)Y_{\ell,m}(\theta,\varphi) = \left(-\frac{1}{2 r^2}
 # High harmonic generation (HHG)
 Artificial one-dimensional atom of the form 
 $$\hat{H} = \frac{1}{2}\hat{p}^2 + \hat{V}(\hat{x}) + E_0 \hat{x} f(t) \cos(\omega t),$$
-where $f(t)$ is the envelope function of a $\sin^2$-laser pulse. We choose Dirichlet boundary conditions, $\psi(x_{\text{min}})=0$ und $\psi(x_{\text{max}})=0$.
+where $f(t)$ is the envelope function of a $\sin^2-\!$ laser pulse. We choose Dirichlet boundary conditions, $\psi(x_{\text{min}})=0$ and $\psi(x_{\text{max}})=0$.
 <p align = "center">
 <img src='figures/HHG.png' width = 400>
 </p>
@@ -43,3 +43,7 @@ $$\hat{H}=\frac{\omega_0}{2} \hat{\sigma}_z + \frac{B_0}{2} ( \hat{\sigma}_x \co
 Calculations of various expectation values like magnetization and susceptibility
 $$M^{(z)} \sim \partial E / \partial \omega_0,$$
 $$\chi_{\mathrm{m}}^{(zz)} \sim \partial^2 E / \partial \omega_0^2.$$
+
+# Tight-Binding models
+Two 1D tight-binding models with different number of orbitals and a model for the description of graphene as discussed in the lecture.
+Calculation of the band structure for the corresponding Hamiltonians and plotting of the lattices in real and reciprocal space.
